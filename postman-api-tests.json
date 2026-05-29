@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "3ca77f3e-dbc0-4430-9bbd-1f099824bbeb",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55251224",
+    "_collection_link": "https://go.postman.co/collection/55251224-3ca77f3e-dbc0-4430-9bbd-1f099824bbeb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://fakestoreapi.com/products?limit=5",
+          "protocol": "https",
+          "host": [
+            "fakestoreapi",
+            "com"
+          ],
+          "path": [
+            "products"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "## **Retrieves a list of all products available in the Fake Store.**\n\n**Base URL:** `https://fakestoreapi.com`\n\n**Method:** GET\n\n**Endpoint:** `/products`\n\n---\n\n### Query Parameters\n\n| Parameter | Type | Required | Description |\n| --- | --- | --- | --- |\n| `limit` | integer | No | Limits the number of products returned. Example: `?limit=5` |\n\n---\n\n### Response\n\nReturns a JSON array of product objects.\n\n**Status:** `200 OK`\n\n#### Product Object Fields\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `id` | number | Unique identifier for the product |\n| `title` | string | Name/title of the product |\n| `price` | number | Price of the product in USD |\n| `description` | string | Detailed description of the product |\n| `category` | string | Category the product belongs to |\n| `image` | string | URL of the product image |\n| `rating` | object | Contains `rate` (average rating) and `count` (number of ratings) |\n\n#### Example Response\n\n``` json\n[\n  {\n    \"id\": 1,\n    \"title\": \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\n    \"price\": 109.95,\n    \"description\": \"Your perfect pack for everyday use and walks in the forest.\",\n    \"category\": \"men's clothing\",\n    \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\n    \"rating\": {\n      \"rate\": 3.9,\n      \"count\": 120\n    }\n  }\n]\n\n ```"
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 21,\r\n  \"title\": \"Wireless Bluetooth Headphones\",\r\n  \"price\": 59.99,\r\n  \"description\": \"Over-ear wireless headphones with noise cancellation and 20-hour battery life.\",\r\n  \"category\": \"electronics\",\r\n  \"image\": \"https://images-na.ssl-images-amazon.com/images/I/61-ZTbzw6oL.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://fakestoreapi.com/products",
+          "protocol": "https",
+          "host": [
+            "fakestoreapi",
+            "com"
+          ],
+          "path": [
+            "products"
+          ]
+        },
+        "description": "## Add New Product\n\nCreates a new product in the Fake Store catalog.\n\n**Endpoint:** `POST https://fakestoreapi.com/products`\n\n---\n\n### Request Body\n\nThe request body must be sent as **JSON** (`application/json`).\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `id` | integer | No | Custom product ID (server may override this) |\n| `title` | string | Yes | Name/title of the product |\n| `price` | number | Yes | Price of the product in USD |\n| `description` | string | No | A short description of the product |\n| `category` | string | Yes | Product category (e.g. `electronics`, `clothing`) |\n| `image` | string | No | URL to the product image |\n\n**Example Request Body:**\n\n``` json\n{\n  \"id\": 21,\n  \"title\": \"Wireless Bluetooth Headphones\",\n  \"price\": 59.99,\n  \"description\": \"Over-ear wireless headphones with noise cancellation and 20-hour battery life.\",\n  \"category\": \"electronics\",\n  \"image\": \"https://images-na.ssl-images-amazon.com/images/I/61-ZTbzw6oL.jpg\"\n}\n\n ```\n\n---\n\n### Response\n\n**Status:** `201 Created`\n\nReturns the created product object, including the assigned `id`.\n\n``` json\n{\n  \"id\": 21,\n  \"title\": \"Wireless Bluetooth Headphones\",\n  \"price\": 59.99,\n  \"description\": \"Over-ear wireless headphones with noise cancellation and 20-hour battery life.\",\n  \"image\": \"https://images-na.ssl-images-amazon.com/images/I/61-ZTbzw6oL.jpg\",\n  \"category\": \"electronics\"\n}\n\n ```\n\n---\n\n### Notes\n\n- This is a mock API — the product is **not actually persisted** in a real database.\n    \n- The `id` field in the response may reflect the value you sent, but it is not guaranteed to be unique or stored.\n    \n- No authentication is required for this endpoint.\n    \n\n---"
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Mens Casual Slim Fit\",\r\n  \"price\": 25.99,\r\n  \"description\": \"The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.\",\r\n  \"category\": \"men's clothing\",\r\n  \"image\": \"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png\",\r\n  \"rating\": {\r\n    \"rate\": 2.1,\r\n    \"count\": 430\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://fakestoreapi.com/products/4",
+          "protocol": "https",
+          "host": [
+            "fakestoreapi",
+            "com"
+          ],
+          "path": [
+            "products",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://fakestoreapi.com/products/20",
+          "protocol": "https",
+          "host": [
+            "fakestoreapi",
+            "com"
+          ],
+          "path": [
+            "products",
+            "20"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
