@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-22T07:48:33.156Z",
+    "end": "2026-04-22T07:48:50.317Z",
+    "duration": 17161,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a291e858-57e9-48ec-97a9-c20d441fa370",
+      "title": "",
+      "fullFile": "cypress\\e2e\\inventory\\inventory.cy.js",
+      "file": "cypress\\e2e\\inventory\\inventory.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+          "title": "Inventory Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "checks if all the details in inventory description are present",
+              "fullTitle": "Inventory Page checks if all the details in inventory description are present",
+              "timedOut": null,
+              "duration": 3162,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_inventoryPage.default.verifyItems();",
+              "err": {},
+              "uuid": "6c2d228f-1a58-4494-b00a-118363a8f37a",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if items label leads to the item page",
+              "fullTitle": "Inventory Page checks if items label leads to the item page",
+              "timedOut": null,
+              "duration": 5559,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getInventoryItems().each(($el, index) => {\n  cy.get(\"[data-test = 'inventory-item-name']\").eq(index).click();\n  cy.verifyItems(\"id\");\n  cy.go('back');\n});",
+              "err": {},
+              "uuid": "8d6808b4-e108-4296-b21e-d28b69758568",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if item images leads to the item page",
+              "fullTitle": "Inventory Page checks if item images leads to the item page",
+              "timedOut": null,
+              "duration": 1690,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getInventoryItems().each(($el, index) => {\n  cy.get(\".inventory_item_img\").eq(index).click();\n  cy.verifyItems(\"id\");\n  cy.go('back');\n});",
+              "err": {},
+              "uuid": "528b2d5b-aa23-48e0-8c97-10d8f8b13efb",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort items by name A to Z",
+              "fullTitle": "Inventory Page should sort items by name A to Z",
+              "timedOut": null,
+              "duration": 1020,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getSortType('az');\n_inventoryPage.default.verifySort(\"az\");",
+              "err": {},
+              "uuid": "b8ae894f-dd05-47e4-9bf7-42033d0f3dca",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort items by name Z to A",
+              "fullTitle": "Inventory Page should sort items by name Z to A",
+              "timedOut": null,
+              "duration": 1054,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getSortType('za');\n_inventoryPage.default.verifySort(\"za\");",
+              "err": {},
+              "uuid": "2fcf9fe3-f567-4210-af84-c136cefdc796",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort items by price low to high",
+              "fullTitle": "Inventory Page should sort items by price low to high",
+              "timedOut": null,
+              "duration": 978,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getSortType('lohi');\n_inventoryPage.default.verifySort(\"lohi\");",
+              "err": {},
+              "uuid": "917c949f-2ea3-4a03-9f70-36b289b4d917",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort items by price high to low ",
+              "fullTitle": "Inventory Page should sort items by price high to low ",
+              "timedOut": null,
+              "duration": 982,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getSortType('hilo');\n_inventoryPage.default.verifySort(\"hilo\");",
+              "err": {},
+              "uuid": "5f4128e2-024e-4baa-9094-af80773f690f",
+              "parentUUID": "6ef79265-0c12-4567-afc1-bbb28e6abc20",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6c2d228f-1a58-4494-b00a-118363a8f37a",
+            "8d6808b4-e108-4296-b21e-d28b69758568",
+            "528b2d5b-aa23-48e0-8c97-10d8f8b13efb",
+            "b8ae894f-dd05-47e4-9bf7-42033d0f3dca",
+            "2fcf9fe3-f567-4210-af84-c136cefdc796",
+            "917c949f-2ea3-4a03-9f70-36b289b4d917",
+            "5f4128e2-024e-4baa-9094-af80773f690f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14445,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
